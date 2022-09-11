@@ -1,3 +1,35 @@
+<mat-toolbar color = "primary">
+  <span>{{ title }}</span>
+  <span class="spacerToolBar"></span>
+  <button [routerLink]="['/inicio']" mat-icon-button class="iconButton"
+    aria-label="Botão com ícone de início">
+    <mat-icon>home</mat-icon>
+    <a class="textButton">INÍCIO</a>
+  </button>
+  <button [routerLink]="['/recentes']" mat-icon-button class="iconButton"
+    aria-label="Botão com ícone de recentes">
+    <mat-icon>history</mat-icon>
+    <a class="textButton">RECENTES</a>
+  </button>
+  <button [routerLink]="['/materia']" mat-icon-button class="iconButton"
+    aria-label="Botão com ícone de matéria">
+    <mat-icon>newspaper</mat-icon>
+    <a class="textButton">MATÉRIA</a>
+  </button>
+  <button [routerLink]="['/sobre']" mat-icon-button class="iconButton"
+    aria-label="Botão com ícone de sobre">
+    <mat-icon>info</mat-icon>
+    <a class="textButton">SOBRE</a>
+  </button>
+  <button [routerLink]="['/contato']" mat-icon-button class="iconButton"
+    aria-label="Botão com ícone de contato">
+    <mat-icon>mail</mat-icon>
+    <a class="textButton">CONTATO</a>
+  </button>
+</mat-toolbar>
+
+
+
 
 
 
