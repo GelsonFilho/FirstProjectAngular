@@ -7,19 +7,9 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./contato.component.scss']
 })
 export class ContatoComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
-
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'Você deve inserir algo';
-    }
-
-    return this.email.hasError('email') ? 'Email inválido' : '';
-  }
-
 }

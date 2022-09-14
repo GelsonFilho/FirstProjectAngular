@@ -1,0 +1,211 @@
+html {
+	scroll-behavior: smooth;
+	/* Deixar o scroll ser realizado de uma maneira suave quando clicado em algum link do menu */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	/* Definição da fonte a ser utilizada no projeto */
+}
+
+p {
+	font-family: Georgia, "Times New Roman", serif;
+	/* Definição da fonte a ser utilizada nos parágrafos */
+	font-size: 1.1rem;
+	/*Tamanho da fonte */
+	line-height: 26px;
+	/* Espaçamento entre as linhas */
+}
+
+img {
+	display: block;
+	/* Deixa a imagem num formato de bloco que significa que ela vai ocupar toda a largura dela mesma */
+	max-width: 100%;
+	/* Largura máxima da imagem definida para ser 100% do tamanho dela */
+}
+
+.btn {
+	border: 2px solid rgb(0, 130, 90);
+	/* Borda do botão tem 2px e nessa cor que será modificada no filter*/
+	padding: 10px 30px;
+	/*Espaçamento interno de 10px cima e baixo e 30px esquerda e direita */
+	background-color: rgb(150, 150, 150);
+	/* Cor do botão */
+	color: white;
+	/* Cor do nome do botão */
+	font-size: 1rem;
+	/* tamanho da fonte do botão */
+	text-transform: uppercase;
+	/* Transforma todo o texto em maiúsculo */
+	font-weight: bold;
+	/* negrito */
+	letter-spacing: .1em;
+	/* Espaçamento entre as letras */
+	transition: 0.2s;
+	filter: hue-rotate(80deg);
+	/* Aplicando um filtro na cor do botão */
+	transition-delay: 0s;
+	/* Tempo de transição */
+}
+
+.btn:hover {
+	/* Cor do botão quando passa o mouse por cima */
+	transition-delay: 0.7s;
+	/* Tempo de transição do efeito após hover */
+	color: white;
+	/* Cor da letra do botão após o tempo de transição */
+	box-shadow: 0 0 10px rgb(0, 130, 90),
+		/* Tamanhos e a cor da sombra do botão após transição */
+		0 0 20px rgb(0, 130, 90),
+		0 0 40px rgb(0, 130, 90),
+		0 0 80px rgb(0, 130, 90),
+		0 0 160px rgb(0, 130, 90);
+}
+
+.btn span {
+	position: relative;
+	z-index: 100;
+	/* Deixar sempre aparente o que está escrito no botão */
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	left: -20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 2px;
+	background: rgb(0, 130, 90);
+	box-shadow: 5px -8px 0 rgb(0, 130, 90),
+		5px 8px 0 rgb(0, 130, 90);
+	transition: width 0.2s, left 0.2s, height 0.2s, box-shadow 0.2s;
+	transition-delay: 0.4s, 0.2s, 0s, 0s;
+}
+
+.btn:hover::before {
+	width: 60%;
+	height: 100%;
+	left: -2px;
+	box-shadow: 5px 0px 0 rgb(0, 130, 90),
+		5px 0px 0 rgb(0, 130, 90);
+	transition-delay: 0s, 0.2s, 0.4s, 0.4s;
+}
+
+.btn::after {
+	content: '';
+	position: absolute;
+	right: -20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 2px;
+	background: rgb(0, 130, 90);
+	box-shadow: -5px -8px 0 rgb(0, 130, 90),
+		-5px 8px 0 rgb(0, 130, 90);
+	transition: width 0.2s, left 0.2s, height 0.2s, box-shadow 0.2s;
+	transition-delay: 0.4s, 0.2s, 0s, 0s;
+}
+
+.btn:hover::after {
+	width: 60%;
+	height: 100%;
+	right: -2px;
+	box-shadow: -5px 0px 0 rgb(0, 130, 90),
+		-5px 0px 0 rgb(0, 130, 90);
+	transition-delay: 0s, 0.2s, 0.4s, 0.4s;
+}
+
+
+
+
+
+.banner {
+	width: 100%;
+	/* Largura da imagem do banner em 100% da tela */
+	height: 400px;
+	/* Altura do banner */
+	background: url("/assets/img/bg-image3.png") no-repeat center;
+	/* Imagem do banner, definindo que ela não pode se repetir, pois quando pede pra ela ocupar toda a tela, ela se repeta por padrão pra que isso aconteça e centralizada na tela com center */
+	background-size: cover;
+	/* Cobrir toda a tela, pois sem essa propriedade ela se estica em 100% do tamanho dela apenas e não da tela*/
+	margin-top: 70px;
+	/* Distãncia dela para o que está acima */
+	text-align: center;
+	/* Texto do banner centralizado */
+	padding-top: 80px;
+	/* Espaçamento inteiro do conteúdo do banner em relação ao topo */
+}
+
+.banner h1 {
+	font-size: 48px;
+	/* Tamanho da fonte do título */
+	color: #FFF;
+	/* Cor branca */
+	font-weight: bold;
+	/* Negrito */
+	text-transform: uppercase;
+	/* Tudo em maiúsculo */
+}
+
+
+.subtitulo {
+	font-size: 24px;
+	/* Tamanho da fonte do subtitulo */
+	line-height: 30px;
+	/* Espaçamento entre as linhas do subtitulo */
+	font-weight: bold;
+	/* Peso da fonte em negrito */
+	color: #000;
+	/* Cor */
+	text-transform: uppercase;
+	/* Transformando tudo em maiúsculo */
+	text-align: center;
+	/* Alinhando o subtítulo ao centro */
+	margin: 40px auto 40px auto;
+	/* Espaçamento entre o Subtítulo e o conteúdo abaixo dele */
+}
+
+.subtitulo:after {
+	/* Código para criar a linha abaixo do subítulo */
+	content: "";
+	display: block;
+	/* Display block faz com que o elemento inicie na próxima linha */
+	width: 200px;
+	/* Largura da linha */
+	height: 3px;
+	/* Altura da linha */
+	background: #000;
+	/*Cor da linha */
+	margin: 8px auto;
+	/* Espaçamento de 8 px cima e baixo e utilizada propriedade auto para que os espaçamentos da esquerda e direita sejam feitos de forma automática para que a linha fique no centro da tela */
+}
+
+
+.dados {
+	padding: 40px 0;
+	/* Espaçamento interno cima, baixo e esquerda e direita */
+}
+
+.container {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0px;
+	position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

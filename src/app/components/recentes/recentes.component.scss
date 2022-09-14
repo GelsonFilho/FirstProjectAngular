@@ -1,0 +1,101 @@
+html {
+	scroll-behavior: smooth;
+	/* Deixar o scroll ser realizado de uma maneira suave quando clicado em algum link do menu */
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	/* Definição da fonte a ser utilizada no projeto */
+}
+
+p {
+	font-family: Georgia, "Times New Roman", serif;
+	/* Definição da fonte a ser utilizada nos parágrafos */
+	font-size: 1.35rem;
+	/*Tamanho da fonte */
+	line-height: 26px;
+	/* Espaçamento entre as linhas */
+}
+
+img {
+	display: block;
+	/* Deixa a imagem num formato de bloco que significa que ela vai ocupar toda a largura dela mesma */
+	max-width: 100%;
+	/* Largura máxima da imagem definida para ser 100% do tamanho dela */
+}
+
+
+.subtitulo {
+	font-size: 24px;
+	/* Tamanho da fonte do subtitulo */
+	line-height: 30px;
+	/* Espaçamento entre as linhas do subtitulo */
+	font-weight: bold;
+	/* Peso da fonte em negrito */
+	color: #000;
+	/* Cor */
+	text-transform: uppercase;
+	/* Transformando tudo em maiúsculo */
+	text-align: center;
+	/* Alinhando o subtítulo ao centro */
+	margin: 40px auto 40px auto;
+	/* Espaçamento entre o Subtítulo e o conteúdo abaixo dele */
+}
+
+
+.dados {
+	padding: 40px 0;
+	/* Espaçamento interno cima, baixo e esquerda e direita */
+}
+
+.dados_lista li {
+	background: rgb(230, 226, 226);
+	/* Cor de fundo das caixas */
+	border-radius: 10px;
+	text-align: center;
+	/* Texto alinhado ao centro */
+}
+
+.dados_lista li img {
+	/* Imagem refente aos dados */
+	margin: 0 auto;
+	/* Imagens alinhadas ao centro das caixas */
+}
+
+.dados_lista li h3 {
+	font-weight: bold;
+	/* Título em negrito */
+	font-size: 1rem;
+	/* Tamanho da fonte */
+	line-height: 50px;
+	/* Título em maiúsculo */
+	margin-top: 70px;
+	/* Espaçamento do topo */
+}
+
+.dados_lista li h3:after {
+	/* Criação da linha em baixo do título */
+	content: "";
+	display: block;
+	width: 200px;
+	height: 4px;
+	background: #000;
+	margin: 5px auto;
+}
+
+.dados_lista li p {
+	padding: 10px 20px 10px 20px;
+	/* Espaçamento interno dos parágrafos */
+}
+
+.titulo-dados {
+	color: rgb(13, 9, 83);
+	font-size: 1rem;
+}
+
+.container {
+	width: 500px;
+	margin: 0 auto;
+	padding: 0px;
+	position: relative;
+}
