@@ -13,9 +13,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 // import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from "@angular/common/http";
 import { MatInputModule } from "@angular/material/input";
+// import { EnterAsTabDirective } from './shared/enter-as-tab';
+
 
 
 
@@ -32,12 +35,14 @@ import { MatInputModule } from "@angular/material/input";
     BrowserModule,
     MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    // EnterAsTabDirective
     //SharedModule
   ],
   providers: [],
