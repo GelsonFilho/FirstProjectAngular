@@ -1,0 +1,24 @@
+<form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="name" required>
+        <mat-error *ngIf="name.invalid">Por favor, insira seu nome</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="email" placeholder="email@exemplo.com" required>
+        <mat-error *ngIf="email.invalid">Por favor, digite um email válido</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput [formControl]="message" maxlength="256" placeholder="Eu me interesso em..."
+            required></textarea>
+        <mat-hint align="end"> {{message.value?.length || 0}}/256</mat-hint>
+        <mat-error *ngIf="message.invalid">Por favor, digite uma mensagem</mat-error>
+    </mat-form-field>
+    <button [disabled]="isLoading" class="submit" type="submit">Enviar</button>
+    <input [formControl]="honeypot" class="hidden" type="text" />
+    <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+        <span>{{responseMessage}}</span>
+    </div>
+</form>
