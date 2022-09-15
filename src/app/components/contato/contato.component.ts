@@ -6,16 +6,16 @@ import { debounceTime, map, of, switchMap } from 'rxjs';
 
 
 @Component({
-  selector: 'app-contato',
-  templateUrl: './contato.component.html',
-  styleUrls: ['./contato.component.scss'],
-  providers: [
-    CepService
-  ]
+	selector: 'app-contato',
+	templateUrl: './contato.component.html',
+	styleUrls: ['./contato.component.scss'],
+	providers: [
+		CepService
+	]
 })
 export class ContatoComponent implements OnInit {
 
-	form!: FormGroup;
+	form: FormGroup;
 	nome: FormControl = new FormControl("", [Validators.required]);
 	email: FormControl = new FormControl("", [Validators.required, Validators.email]);
 	cep_endereco: FormControl = new FormControl("", [Validators.required]);
@@ -28,23 +28,23 @@ export class ContatoComponent implements OnInit {
 	honeypot: FormControl = new FormControl(""); // usaremos isso para evitar spam
 	submitted: boolean = false; // mostrar e ocultar a mensagem de sucesso
 	isLoading: boolean = false; // desative o botão enviar se estivermos carregando
-	responseMessage!: string; // a mensagem de resposta para mostrar ao usuário
+	responseMessage: string = ''; // a mensagem de resposta para mostrar ao usuário
 
 
 	constructor(
-    private formBuilder: FormBuilder,
-    private http: HttpClient,
-    private cepService: CepService
-    ) {
+		private formBuilder: FormBuilder,
+		private http: HttpClient,
+		private cepService: CepService
+	) {
 		this.form = this.formBuilder.group({
 			nome: this.nome,
 			email: this.email,
-      cep_endereco: this.cep_endereco,
-      logradouro_endereco: this.logradouro_endereco,
-      bairro_endereco: this.bairro_endereco,
-      cidade_endereco: this.cidade_endereco,
-      uf_endereco: this.uf_endereco,
-      num_endereco: this.num_endereco,
+			cep_endereco: this.cep_endereco,
+			logradouro_endereco: this.logradouro_endereco,
+			bairro_endereco: this.bairro_endereco,
+			cidade_endereco: this.cidade_endereco,
+			uf_endereco: this.uf_endereco,
+			num_endereco: this.num_endereco,
 			mensagem: this.mensagem,
 			honeypot: this.honeypot,
 		});
@@ -52,24 +52,24 @@ export class ContatoComponent implements OnInit {
 
 
 	ngOnInit(): void {
-    this.form.get('cep_endereco')?.valueChanges.pipe(
-      debounceTime(500),
-      map( (cep: string) => {
-        const _cep = cep.replace(/[_\W]+/g,'');
-        return _cep.length == 8 ? _cep : undefined;        
-      }),
-      switchMap( cep => {        
-        return cep ? this.cepService.buscaCEP(cep) : of(undefined)
-      })
-      ).subscribe( (result: any) => {
-        console.log(result);
-        if ( result ) {
-        this.form.get('logradouro_endereco')?.setValue(result.logradouro);
-        this.form.get('bairro_endereco')?.setValue(result.bairro);
-        this.form.get('cidade_endereco')?.setValue(result.localidade);
-        this.form.get('uf_endereco')?.setValue(result.uf);
-      }
-    })
+		this.form.get('cep_endereco')?.valueChanges.pipe(
+			debounceTime(500),
+			map((cep: string) => {
+				const _cep = cep.replace(/[_\W]+/g, '');
+				return _cep.length == 8 ? _cep : undefined;
+			}),
+			switchMap(cep => {
+				return cep ? this.cepService.buscaCEP(cep) : of(undefined)
+			})
+		).subscribe((result: any) => {
+			console.log(result);
+			if (result) {
+				this.form.get('logradouro_endereco')?.setValue(result.logradouro);
+				this.form.get('bairro_endereco')?.setValue(result.bairro);
+				this.form.get('cidade_endereco')?.setValue(result.localidade);
+				this.form.get('uf_endereco')?.setValue(result.uf);
+			}
+		})
 	}
 
 	onSubmit() {
@@ -90,7 +90,7 @@ export class ContatoComponent implements OnInit {
 			this.http.post("https://script.google.com/macros/s/AKfycbx-mE1qXWVMhPOt7Djqwi22O4nFx5oXMJtGfPHjypwysz3RZH_myfmmJv0n6t3AvOmf/exec", formData).subscribe(
 				(response: any) => {
 					// choose the response mensagem
-          console.log(response);
+					console.log(response);
 					if (response["result"] == "success") {
 						this.responseMessage = "Obrigado pelo seu contato! Retornaremos em breve!";
 					} else {
