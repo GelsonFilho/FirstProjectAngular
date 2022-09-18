@@ -1,14 +1,6 @@
 # FirstProjectAngular
+Esta e o meu primeiro projeto, apenas para introdução ao framework Angular 14.
 
-
-## Email e Senha do Formulário de Contato
-Servidor: gmail.com
-Login: gelson.renato.connor@gmail.com
-Senha: gelsonrenatoconnor
-URl da planilha como implantação de projeto: https://script.google.com/macros/s/AKfycbx-mE1qXWVMhPOt7Djqwi22O4nFx5oXMJtGfPHjypwysz3RZH_myfmmJv0n6t3AvOmf/exec
-Visualização da planilha: https://docs.google.com/spreadsheets/d/1ZanEERetivK9T2xTtnKJ1aHStGHRAdWJ6J1SyJmSpgg/edit#gid=0
-
-
-
-
-
+## Informações gerais
+Há uma versão melhorada que de fato foi avaliada como primeiro projeto final após curso sobre assunto.
+Versão melhorada: [SecondProjectAngular](https://github.com/GelsonFilho/SecondProjectAngular)
